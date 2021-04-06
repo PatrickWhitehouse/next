@@ -7,16 +7,12 @@ const Custom404 = () => {
     const [sec, setSec] = useState(3);
 
     useEffect(() => {
-        setTimeout(() => {
-            router.push('/');
-        }, 3000)
-    }, [])
-
-    useEffect(() => {
-        if(sec !== 1) {
+        if(sec !== 0) {
             setTimeout(() => {
                 setSec(sec => sec - 1);
             }, 1000)
+        } else {
+            router.push('/');
         }
     }, [sec]);
 
